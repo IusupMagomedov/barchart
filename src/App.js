@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-=======
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import * as d3 from "d3"
@@ -106,7 +84,6 @@ function App() {
       
       <svg width="900" height="500" ref={svgRef}>
       </svg>
->>>>>>> 6e59c68 (React and d3 handshaked)
     </div>
   );
 }
