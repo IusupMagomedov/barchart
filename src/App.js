@@ -88,7 +88,7 @@ function App() {
             .attr("id", "y-axis")
     }
   }, [barChart])
-
+ 
   return (
     <div className="App">
       
