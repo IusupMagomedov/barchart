@@ -28,21 +28,11 @@ function App() {
 
   const [barChart, setBarChart] = useState(dataset)
 
-//   componentDidMount() {
-//     // Simple GET request using fetch
-//     fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
-//       .then(response => response.json().data)
-//       .then(data => console.log(data))
-      
-// }
-
-
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
-      .then(response => response.json())
-      .then(jsonData => setBarChart(jsonData.data))
+    
 
     return () => {
+
       //create a scale
       const xScale = d3.scaleLinear()
                      .domain([0, d3.max(dataset, (d) => d[0])])
@@ -57,7 +47,7 @@ function App() {
 
 
         svg.selectAll("circle")
-            .data(dataset)
+            .data(barChart)
             .enter()
             .append("circle")
             .attr("cx", (d) => xScale(d[0]))
@@ -88,15 +78,12 @@ function App() {
             .attr("id", "y-axis")
     }
   }, [barChart])
- 
+
   return (
-    <div className="App"> 
+    <div className="App">
       
       <svg width="900" height="500" ref={svgRef}>
       </svg>
-      <ul> 
-        {barChart.map(element => <li>{element[0]} - {element[1]}</li>)}
-      </ul>
     </div>
   );
 }
