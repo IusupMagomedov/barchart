@@ -90,7 +90,7 @@ function App() {
   }, [barChart])
  
   return (
-    <div className="App">
+    <div className="App"> 
       
       <svg width="900" height="500" ref={svgRef}>
       </svg>
