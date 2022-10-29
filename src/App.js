@@ -29,7 +29,9 @@ function App() {
   const [barChart, setBarChart] = useState(dataset)
 
   useEffect(() => {
-    
+    fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
+      .then(response => response.json())
+      .then(jsonData => setBarChart(jsonData.data))
 
     return () => {
 
@@ -47,7 +49,7 @@ function App() {
 
 
         svg.selectAll("circle")
-            .data(barChart)
+            .data(dataset)
             .enter()
             .append("circle")
             .attr("cx", (d) => xScale(d[0]))
@@ -84,6 +86,7 @@ function App() {
       
       <svg width="900" height="500" ref={svgRef}>
       </svg>
+      {barChart.map(element => <li>{element[0]} {element[1]}</li>)}
     </div>
   );
 }
