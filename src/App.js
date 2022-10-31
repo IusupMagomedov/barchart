@@ -17,7 +17,9 @@ function App() {
     fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
       .then(response => response.json())
       .then(jsonData => setBarChart(jsonData.data))
-      
+      .catch((error) => {
+        console.log('Error:', error)})
+
     console.log("data fetched")
     //create a scale
     
