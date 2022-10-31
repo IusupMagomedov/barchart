@@ -2,6 +2,8 @@
 
 This project was created by iUsup Magomedov as a FCC test challenge
 
+Ready project is here: https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json
+
 Visualize Data with a Bar Chart
 Objective: Build an app that is functionally similar to this: https://bar-chart.freecodecamp.rocks.
 
